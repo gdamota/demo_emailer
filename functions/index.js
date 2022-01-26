@@ -53,4 +53,5 @@ exports.unsubscribeEmail = functions.https.onRequest((req, res) => {
   console.log(req.query.text);
   // in a more fleshed out version rather than the email addr being hardcoded it would be the query text posted from sendgrids webhook
   database.ref("email_list/info@saferschoolsolutions.com").set(false);
+  return "Successfully unsubscribed";
 });
